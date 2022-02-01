@@ -1,5 +1,7 @@
 # PC Configurator VUE
 
+![Demonstration](demonstration.gif)
+
 ## Description
 ```
 Разработан конфигуратор компьютера, который позволяет выбрать
@@ -24,5 +26,3 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-
-![Demonstration](demonstration.gif)
