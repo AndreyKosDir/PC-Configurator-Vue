@@ -25,4 +25,4 @@ npm run build
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-![Demonstration](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif | width=500 | height=250)
+![Demonstration](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
