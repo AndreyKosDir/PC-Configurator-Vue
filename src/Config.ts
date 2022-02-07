@@ -1,4 +1,4 @@
-import {ICatalogItem, IDetail, IOptions} from "@/Interfaces";
+import {ICatalogItem, IDetail, IOptions} from "@/interfaces/Interfaces";
 
 export interface IConfig {
     details: IDetail[],

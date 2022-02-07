@@ -1,4 +1,4 @@
-import {ICatalogItem, IDetail, IItemsList, IOptions, TLastSort, TSort} from "@/Interfaces";
+import {ICatalogItem, IDetail, IItemsList, IOptions, TLastSort, TSort} from "@/interfaces/Interfaces";
 
 interface IItemDataConfig {
     [id: string]: string
@@ -20,6 +20,9 @@ const ItemsDataConfig: IItemDataConfig = {
     videoCard: './data/Items/videoCard.json'
 }
 
+/**
+ * Класс для имитации работы бэкенда.
+ */
 export default class BackEnd {
 
     private static itemsData: IItemsData = {};
