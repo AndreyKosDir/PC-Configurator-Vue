@@ -9,16 +9,16 @@
             <p><strong>{{item.price.toLocaleString()}}</strong> ₽</p>
         </div>
         <div class="select">
-            <Button1 v-bind:text="'Выбрать'" @click="select"/>
+            <SelectButton v-bind:text="'Выбрать'" @click="select"/>
         </div>
     </div>
 </template>
 
 <script>
-    import Button1 from "@/components/UI/buttons/Button1";
+    import SelectButton from "@/components/UI/buttons/SelectButton";
     export default {
         name: "CatalogItem",
-        components: {Button1},
+        components: {SelectButton},
         props: ['item'],
         methods: {
             /**

@@ -1,15 +1,15 @@
 <template>
     <form @submit.prevent="onSubmit" class="form">
         <input type="text" placeholder="Поиск..." v-model="searchQuery">
-        <Button1 v-bind:text="'Найти'"></Button1>
+        <SelectButton v-bind:text="'Найти'"></SelectButton>
     </form>
 </template>
 
 <script>
-    import Button1 from "./buttons/Button1";
+    import SelectButton from "./buttons/SelectButton";
     export default {
         name: "Input",
-        components: {Button1},
+        components: {SelectButton},
         data() {
           return {
               searchQuery: ''

@@ -1,6 +1,6 @@
 <template>
     <div class="field">
-        <Button3
+        <PageButton
             v-for="page of pages"
             v-bind:page="page"
             v-bind:currentPage="currentPage"
@@ -10,10 +10,10 @@
 </template>
 
 <script>
-    import Button3 from "@/components/UI/buttons/Button3";
+    import PageButton from "@/components/UI/buttons/PageButton";
     export default {
         name: "Pagination",
-        components: {Button3},
+        components: {PageButton},
         props: ['pages', 'currentPage'],
         data() {
             return {

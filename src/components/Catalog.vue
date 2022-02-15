@@ -6,8 +6,8 @@
             <Input @changeSearchQuery="changeSearchQuery"/>
             <Loader v-if="isLoading"/>
             <div class="sort">
-                <Button2 @click="sort" :info="{text: 'Наименование', id: 'name'}" :direct="sortByName"/>
-                <Button2 @click="sort" :info="{text: 'Цена', id: 'price'}" :direct="sortByPrice"/>
+                <NavigationButton @click="sort" :info="{text: 'Наименование', id: 'name'}" :direct="sortByName"/>
+                <NavigationButton @click="sort" :info="{text: 'Цена', id: 'price'}" :direct="sortByPrice"/>
             </div>
             <CatalogItem v-for="item of items" :item="item" @selectItem="returnItem"/>
             <div class="dummy" v-if="itemsIsEmpty() && !isLoading">По данному запросу ничего не найдено</div>
@@ -22,12 +22,12 @@
     import Loader from "@/components/UI/Loader";
     import CatalogItem from "@/components/CatalogItem";
     import Pagination from "@/components/UI/Pagination";
-    import Button2 from "@/components/UI/buttons/Button2";
+    import NavigationButton from "@/components/UI/buttons/SortButton";
     import BackEnd from "@/BackEnd";
 
     export default {
         name: "Catalog",
-        components: {Button2, Pagination, CatalogItem, Loader, CloseButton, Input},
+        components: {NavigationButton, Pagination, CatalogItem, Loader, CloseButton, Input},
         props: ['id', 'name'],
         data() {
             return {
@@ -70,9 +70,9 @@
             },
 
             /**
-             * Получить данные (список товаров и список страниц) с "бэкэнда".
+             * Получить данные (список товаров и список страниц).
              */
-            getDataFromBackEnd() {
+            getData() {
                 this.isLoading = true;
                 BackEnd.getItemsAndPages(this.itemsOptions)
                     .then(resolve => {
@@ -140,12 +140,12 @@
 
         watch: {
             itemsOptions() {
-                this.getDataFromBackEnd();
+                this.getData();
             }
         },
 
         created() {
-            this.getDataFromBackEnd();
+            this.getData();
         }
     }
 </script>
